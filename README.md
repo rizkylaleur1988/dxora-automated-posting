@@ -243,7 +243,7 @@ curl -X POST "http://localhost:4000/posting" \
       "public_access": false,
       "date": null,
       "time": null,
-      "error": "MASTODON_BASE_URL or MASTODON_ACCESS_TOKEN or MASTODON_VISIBILITY is required"
+      "error": "MASTODON_ACCESS_TOKEN or MASTODON_VISIBILITY is required"
     }
   ],
   "errors": null
