@@ -76,11 +76,9 @@ def test_api_response_and_error_detail_models():
 
     res = ApiResponse(
         success=True,
-        message="Done",
         results={"item": 1},
         errors=[err]
     )
     dumped = res.model_dump()
     assert dumped["success"] is True
-    assert dumped["message"] == "Done"
     assert len(dumped["errors"]) == 1

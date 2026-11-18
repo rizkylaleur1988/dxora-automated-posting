@@ -13,7 +13,6 @@ async def test_health_endpoint():
     assert response.status_code == 200
     data = response.json()
     assert data["success"] is True
-    assert data["message"] == "success"
 
 
 @pytest.mark.asyncio
@@ -21,7 +20,6 @@ async def test_posting_endpoint_success():
     mock_service = AsyncMock()
     mock_service.publish.return_value = ApiResponse(
         success=True,
-        message="success",
         results=[
             PlatformResult(
                 platform="Telegram",
@@ -65,7 +63,6 @@ async def test_posting_endpoint_validation_error_no_url():
     assert response.status_code == 422
     data = response.json()
     assert data["success"] is False
-    assert data["message"] == "Validation error"
     assert any(err["field"] == "message" for err in data["errors"])
 
 
@@ -78,4 +75,3 @@ async def test_posting_endpoint_empty_body():
     assert response.status_code == 422
     data = response.json()
     assert data["success"] is False
-    assert data["message"] == "Validation error"

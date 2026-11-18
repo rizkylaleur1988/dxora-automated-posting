@@ -173,7 +173,6 @@ curl -X GET "http://localhost:4000/health" \
 ```json
 {
   "success": true,
-  "message": "success",
   "results": null,
   "errors": null
 }
@@ -198,7 +197,6 @@ curl -X POST "http://localhost:4000/posting" \
 ```json
 {
   "success": true,
-  "message": "success",
   "results": [
     {
       "platform": "Telegram",
@@ -271,7 +269,6 @@ curl -X POST "http://localhost:4000/posting" \
 ```json
 {
   "success": false,
-  "message": "Validation error",
   "results": null,
   "errors": [
     {
@@ -295,7 +292,6 @@ curl -X POST "http://localhost:4000/posting" \
 ```json
 {
   "success": false,
-  "message": "Validation error",
   "results": null,
   "errors": [
     {

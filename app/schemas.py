@@ -47,6 +47,5 @@ class PostingRequest(BaseModel):
 
 class ApiResponse(BaseModel):
     success: bool = False
-    message: str = "success"
     results: dict | list | None = None
     errors: list[ErrorDetail] | None = None

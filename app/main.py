@@ -26,7 +26,6 @@ async def validation_exception_handler(
 
     return JSONResponse(status_code=422, content=ApiResponse(
         success=False,
-        message="Validation error",
         errors=errors
     ).model_dump())
 
@@ -35,7 +34,6 @@ async def validation_exception_handler(
 def health() -> ApiResponse:
     return ApiResponse(
         success=True,
-        message="success"
     )
 
 
