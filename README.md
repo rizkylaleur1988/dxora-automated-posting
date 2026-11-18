@@ -248,7 +248,9 @@ curl -X POST "http://localhost:4000/posting" \
 }
 ```
 
-> **Note:** Even if one platform fails (for example, Mastodon credentials are not configured), the root `"success": true` remains true as long as at least one platform succeeds.
+> **Note on Live vs Unconfigured Posting:**
+> - If you test this request **before configuring real credentials** in `.env`, the service will safely return HTTP 200 with `"success": false` and each platform will report `"status": "failed"` explaining which credential is missing (e.g., `"TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is required"`).
+> - Once you configure valid credentials for one or more platforms in `.env`, those platforms will return `"status": "success"` with their live published URLs, and the root `"success"` flag will become `true`. Even if one platform fails, posting to the remaining platforms continues unaffected.
 
 ---
 
